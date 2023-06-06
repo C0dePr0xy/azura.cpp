@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "/home/eric/Documents/azura.cpp",
-      "program": "/home/eric/Documents/azura.cpp/build/Debug/outDebug",
+      "program": "/home/eric/Documents/azura.cpp/build/Release/outRelease",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
