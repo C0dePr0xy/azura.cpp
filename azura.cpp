@@ -26,7 +26,7 @@ int main()
         std::cout << "Just as a reminder, you can always edit goals in the code using a text editor of your choice! :D\n";
         std::cout << "Would you like to continue? (Y/N)\n";
         std::cin >> yesno;
-        if (yesno == "Y"){
+        if (yesno == "y" || "Y"){
             std::cout << "Select which step 1-10 you want to do first please...\n";
             std::cin >> numkey;
             switch (numkey) {
@@ -64,7 +64,7 @@ int main()
                     std::cout << "Invalid numkey!\n";
                     break;
             }
-        }else if (yesno == "N"){
+        }else if (yesno == "n" || "N"){
             std::cout << "logging out...\n";
             std::cout << "Exiting program...\n";
         } else{
