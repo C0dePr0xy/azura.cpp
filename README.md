@@ -1,4 +1,5 @@
-![IMG_1132](https://github.com/C0dePr0xy/azura.cpp/assets/87400651/a7d0658a-a1e7-4608-9bfa-76b07043f7b0)
+![IMG_1150](https://github.com/C0dePr0xy/azura.cpp/assets/87400651/409fc64b-f7b6-4070-a600-04c53496ef3f)
+
 
 # azura.cpp
 Project Azura is a terminal based tool made using C++. I'm currently using this program to practice what I've learned and to make an actual project about it I guess. 💻 🐧
