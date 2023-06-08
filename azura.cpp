@@ -14,17 +14,18 @@ int main()
                  "██╔═══╝░██╔══██╗██║░░██║██╗░░██║██╔══╝░░██║░░██╗░░░██║░░░  ██╔══██║██╔══╝░░██║░░░██║██╔══██╗██╔══██║\n"
                  "██║░░░░░██║░░██║╚█████╔╝╚█████╔╝███████╗╚█████╔╝░░░██║░░░  ██║░░██║███████╗╚██████╔╝██║░░██║██║░░██║\n"
                  "╚═╝░░░░░╚═╝░░╚═╝░╚════╝░░╚════╝░╚══════╝░╚════╝░░░░╚═╝░░░  ╚═╝░░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝\n";
+    std::cout << "(concept) (eb-v0.5)\n";
     std::cout << " \n";
     std::cout << "Enter Custom Username:\n";
     std::cin >> uname;
-    std::cout << "Hello " << uname << " welcome to PROJECT AZURA\n";
-    std::cout << "Hello " << uname << ", please enter password:";
+    std::cout << "Hello " << uname << " welcome to PROJECT AZURA (early-build v0.5)\n";
+    std::cout << "Hello " << uname << ", please enter password: ";
     std::cin >> pword;
     if (pword == "admin"){
         std::cout << "Access Granted!\n";
-        std::cout << "Welcome " << uname << " to ASURA, Your personal planner.\n";
+        std::cout << "Welcome " << uname << " to ASURA, Your personal (future) planner.\n";
         std::cout << "Just as a reminder, you can always edit goals in the code using a text editor of your choice! :D\n";
-        std::cout << "Would you like to continue? (Y/N)\n";
+        std::cout << "Would you like to continue? (Y/y or N/n)\n";
         std::cin >> yesno;
         if (yesno == "y" || "Y"){
             std::cout << "Select which step 1-10 you want to do first please...\n";
