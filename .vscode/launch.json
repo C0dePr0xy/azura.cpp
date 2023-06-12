@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/eric/Documents/azura.cpp-1",
-      "program": "/home/eric/Documents/azura.cpp-1/build/Debug/outDebug",
+      "cwd": "/home/eric/Documents/azura.cpp",
+      "program": "/home/eric/Documents/azura.cpp/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
