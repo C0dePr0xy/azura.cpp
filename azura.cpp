@@ -21,7 +21,7 @@ int main()
     std::cout << "Hello " << uname << " welcome to PROJECT AZURA (early-build v0.5)\n";
     std::cout << "Hello " << uname << ", please enter password (remember that you can edit the pword variable to whatever you want within the code!): ";
     std::cin >> pword;
-    if (pword == userpword){
+    if (pword == admin){
         std::cout << "Access Granted!\n";
         std::cout << "Welcome " << uname << " to AZURA, Your personal lightweight (concept) to-do list.\n";
         std::cout << "Just as a reminder, you can always edit goals in the code using a text editor of your choice! :D\n";
