@@ -14,21 +14,21 @@ int main()
                  "██╔═══╝░██╔══██╗██║░░██║██╗░░██║██╔══╝░░██║░░██╗░░░██║░░░  ██╔══██║██╔══╝░░██║░░░██║██╔══██╗██╔══██║\n"
                  "██║░░░░░██║░░██║╚█████╔╝╚█████╔╝███████╗╚█████╔╝░░░██║░░░  ██║░░██║███████╗╚██████╔╝██║░░██║██║░░██║\n"
                  "╚═╝░░░░░╚═╝░░╚═╝░╚════╝░░╚════╝░╚══════╝░╚════╝░░░░╚═╝░░░  ╚═╝░░╚═╝╚══════╝░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝\n";
-    std::cout << "(concept-visual) (eb-v0.5)\n";
+    std::cout << "(visual-concept) (eb-v0.6)\n";
     std::cout << " \n";
     std::cout << "Enter Custom Username:\n";
     std::cin >> uname;
     std::cout << "Hello " << uname << " welcome to PROJECT AZURA (early-build v0.5)\n";
-    std::cout << "Hello " << uname << ", please enter password: ";
+    std::cout << "Hello " << uname << ", please enter password (remember that you can edit the pword variable to whatever you want within the code!): ";
     std::cin >> pword;
-    if (pword == "admin"){
+    if (pword == userpword){
         std::cout << "Access Granted!\n";
-        std::cout << "Welcome " << uname << " to ASURA, Your personal (future) planner.\n";
+        std::cout << "Welcome " << uname << " to AZURA, Your personal lightweight (concept) to-do list.\n";
         std::cout << "Just as a reminder, you can always edit goals in the code using a text editor of your choice! :D\n";
         std::cout << "Would you like to continue? (Y/y or N/n)\n";
         std::cin >> yesno;
         if (yesno == "y" || "Y"){
-            std::cout << "Select which step 1-10 you want to do first please...\n";
+            std::cout << "Select which step 1-10 you want to do first please... (You can edit the tasks in the switch statement within the code!)\n";
             std::cin >> numkey;
             switch (numkey) {
                 case 1:
