@@ -1,18 +1,25 @@
-﻿#include <iostream>
+#include <iostream>
 
+void azura();
+void egg();
 int main()
 {
+    azura();
+}
+
+void azura() {
     std::string uname = "";
     std::string pword = "";
     std::string yesno;
+    std::string eggprompt;
     int numkey;
 
-    std::cout << "PROJECT AZURA for WINDOWS OS!\n";
-    std::cout << "(visual-concept) (eb-v0.6)\n";
+    std::cout << "AZURA-CLI for WINDOWS OS!\n";
+    std::cout << "(concept) (eb-v0.8)\n";
     std::cout << " \n";
     std::cout << "Enter Custom Username:\n";
     std::cin >> uname;
-    std::cout << "Hello " << uname << " welcome to PROJECT AZURA (early-build v0.5)\n";
+    std::cout << "Hello " << uname << ", welcome to PROJECT AZURA (early-build v0.8)\n";
     std::cout << "Hello " << uname << ", please enter password (remember that you can edit the pword variable to whatever you want within the code!): ";
     std::cin >> pword;
     if (pword == "admin") {
@@ -74,4 +81,17 @@ int main()
         std::cout << "Please close and re-open terminal to restart.\n";
         std::cout << "Bye bye!! :3\n";
     }
+
+    std::cout << "There is a special message!\n";
+    std::cout << "Would you like to see it? Y/y or N/n\n";
+    std::cin >> eggprompt;
+    if (eggprompt == "Y" || "y") {
+        egg();
+    } else (eggprompt == "N" || "n"); {
+        std::cout << "I'm sorry that you didn't want to see the message.\n";
+    }
+}
+void egg() {
+    std::cout << "THE END FOR NOW\n";
+    std::cout << "I will see you later... In due time.\n";
 }
