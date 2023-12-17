@@ -1,97 +1,83 @@
+#include <fstream>
 #include <iostream>
 
-void azura();
-void egg();
-int main()
-{
-    azura();
-}
+char input;
 
-void azura() {
-    std::string uname = "";
-    std::string pword = "";
-    std::string yesno;
-    std::string eggprompt;
-    int numkey;
+int main() {
+    while (true) {
+        std::cout << "Simple-Tasks for WINDOWS OS!\n";
 
-    std::cout << "AZURA-CLI for WINDOWS OS!\n";
-    std::cout << "(concept) (eb-v0.8)\n";
-    std::cout << " \n";
-    std::cout << "Enter Custom Username:\n";
-    std::cin >> uname;
-    std::cout << "Hello " << uname << ", welcome to PROJECT AZURA (early-build v0.8)\n";
-    std::cout << "Hello " << uname << ", please enter password (remember that you can edit the pword variable to whatever you want within the code!): ";
-    std::cin >> pword;
-    if (pword == "admin") {
-        std::cout << "Access Granted!\n";
-        std::cout << "Welcome " << uname << " to AZURA, Your personal lightweight (concept) to-do list.\n";
-        std::cout << "Just as a reminder, you can always edit goals in the code using a text editor of your choice! :D\n";
-        std::cout << "Would you like to continue? (Y/y or N/n)\n";
-        std::cin >> yesno;
-        if (yesno == "y" || "Y") {
-            std::cout << "Select which step 1-10 you want to do first please... (You can edit the tasks in the switch statement within the code!)\n";
-            std::cin >> numkey;
-            switch (numkey) {
-            case 1:
-                std::cout << "Brainstorm Ideas\n";
-                break;
-            case 2:
-                std::cout << "Organize Ideas\n";
-                break;
-            case 3:
-                std::cout << "Learn more C++\n";
-                break;
-            case 4:
-                std::cout << "Learn Blender3D\n";
-                break;
-            case 5:
-                std::cout << "Look for suitable game engine\n";
-                break;
-            case 6:
-                std::cout << "Install game engine\n";
-                break;
-            case 7:
-                std::cout << "Learn game engine\n";
-                break;
-            case 8:
-                std::cout << "Make simple character controller\n";
-                break;
-            case 9:
-                std::cout << "Design simple level\n";
-                break;
-            case 10:
-                std::cout << "Practice C++ more\n";
-                break;
-            default:
-                std::cout << "Invalid numkey!\n";
-                break;
-            }
-        }
-        else if (yesno == "n" || "N") {
-            std::cout << "logging out...\n";
-            std::cout << "Exiting program...\n";
-        }
-        else {
-            std::cout << "INVALID INPUT!! " << uname << " logging out, " << (pword == "CLEARED") << "EXITING...";
+        std::cout << "New Task [N]\n";
+        std::cout << "Edit Task [E]\n";
+        std::cout << "Delete Task [D]\n";
+        std::cout << "List Tasks [L]\n";
+        std::cout << "About [A]\n";
+        std::cout << "Exit [X]\n";
+        std::cout << "\n";
+        std::cin >> input;
+        std::cout << "\n";
+        std::cout << "\n";
+
+        std::string FileName;
+        std::string TaskDetails;
+
+        std::ofstream TaskFile;
+
+        switch (input) {
+        case 'N':
+            std::cout << "Enter FileName: ";
+            std::cin >> FileName;
+            TaskFile.open(FileName);
+            TaskFile.close();
+            break;
+        case 'E':
+            std::cout << "Enter FileName to edit: ";
+            std::cin >> FileName;
+            TaskFile.open(FileName);
+            std::cout << "Enter TaskDetails: ";
+            std::cin >> TaskDetails;
+            TaskFile << TaskDetails << "\n";
+            TaskFile.close();
+            break;
+        case 'D':
+            std::cout << "Please Enter FileName to delete: ";
+            std::cin >> FileName;
+            if (remove("myfile.txt") != 0)
+                perror("Error deleting file");
+            else
+                puts("File successfully deleted");
+            break;
+        case 'L':
+            std::cout << "\n";
+            std::cout << "Feature in progress.\n";
+            std::cout << "\n";
+            break;
+        case 'X':
+            std::cout << "\n";
+            std::cout << "Exiting program. Goodbye!\n";
+            std::cout << "\n";
+            std::cout << "\n";
+            return 0; // Exit the program
+        case 'A':
+            std::cout << "(release) (r-v0.1)\n";
+            std::cout << "\n";
+            std::cout << "\n";
+            std::cout << "Author(s): Eric Guerra\n";
+            std::cout << "\n";
+            std::cout << "Maintainer(s): Eric Guerra\n";
+            std::cout << "\n";
+            std::cout << "License: N/A\n";
+            std::cout << "\n";
+            std::cout << "Contact(s): ericg36@outlook.com\n";
+            std::cout << "\n";
+            break;
+        default:
+            std::cout << "\n";
+            std::cout << "Bad Input!\n";
+            std::cout << "\n";
+            break;
         }
     }
-    else {
-        std::cout << "Access Denied!\n";
-        std::cout << uname << " is not permitted to use this application!\n";
-        std::cout << "Please close and re-open terminal to restart.\n";
-        std::cout << "Bye bye!! :3\n";
-    }
 
-    std::cout << "There is a special message!\n";
-    std::cout << "Would you like to see it? Y/y or N/n\n";
-    std::cin >> eggprompt;
-    if (eggprompt == "Y" || "y") {
-        egg();
-    } else (eggprompt == "N" || "n"); {
-        std::cout << "I'm sorry that you didn't want to see the message.\n";
-    }
-}
-void egg() {
-    std::cout << "THE END FOR NOW\n";
-    std::cout << "I will see you later... In due time.\n";
+    return 0;
 }
