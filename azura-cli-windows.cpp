@@ -1,5 +1,6 @@
 #include <fstream>
 #include <iostream>
+#include <string>
 
 char input;
 
@@ -19,7 +20,7 @@ int main() {
         std::cout << "\n";
 
         std::string FileName;
-        std::string TaskDetails;
+        std::string TaskDetails = " ";
 
         std::ofstream TaskFile;
 
@@ -42,7 +43,7 @@ int main() {
         case 'D':
             std::cout << "Please Enter FileName to delete: ";
             std::cin >> FileName;
-            if (remove("myfile.txt") != 0)
+            if (remove("FileName") != 0)
                 perror("Error deleting file");
             else
                 puts("File successfully deleted");
@@ -59,7 +60,7 @@ int main() {
             std::cout << "\n";
             return 0; // Exit the program
         case 'A':
-            std::cout << "(release) (r-v0.1)\n";
+            std::cout << "(release) (r-v0.2)\n";
             std::cout << "\n";
             std::cout << "\n";
             std::cout << "Author(s): Eric Guerra\n";
