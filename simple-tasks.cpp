@@ -23,6 +23,7 @@ int main() {
         std::string TaskList = "Task List Goes Here.";
 
         std::ofstream TaskFile ("Tasks.utsk");
+        TaskFile.close();
 
         switch (input) {
         case 'N':
