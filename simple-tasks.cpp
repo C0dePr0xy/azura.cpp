@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+using namespace std;
 
 char input;
 char confirmation;
@@ -20,23 +21,19 @@ int main() {
         std::cout << "\n";
         std::cout << "\n";
 
-        std::string TaskList = "Task List Goes Here.";
-
+        
         std::ofstream TaskFile ("Tasks.utsk");
-        TaskFile.close();
+        std::string taskstring;
 
         switch (input) {
         case 'N':
             TaskFile.open("Tasks.utsk");
-            TaskFile << TaskList;
-            TaskFile.close();
             break;
         case 'E':
-            TaskFile.open("Tasks.utsk");
+            TaskFile.open("Tasks.utsk", std::ios::out);
             std::cout << "Enter TaskDetails: ";
-            std::cin >> TaskList;
-            TaskFile << TaskList << "\n";
-            TaskFile.close();
+            std::cin >> taskstring;
+            TaskFile << taskstring << "\n";
             break;
         case 'D':
             std::cout << "Deletion of Tasks.utsk is irreversable!\n";
@@ -50,11 +47,12 @@ int main() {
             }
             else if (confirmation == 'N') {
                 std::cout << "Operation failed: \n";
-                std::cout << "Override deletion by user!\n";
+                std::cout << "Error Code: UEII01D!\n";
+                std::cout << "Refer to " << "MANUAL.txt" << " for more info\n";
             }
             else {
                 std::cout << "Invalid Input!\n";
-                std::cout << "Error Code: UEII01D!\n";
+                std::cout << "Error Code: UEII02D!\n";
                 std::cout << "Refer to " << "MANUAL.txt" << " for more info\n";
             }
             break;
@@ -68,9 +66,10 @@ int main() {
             std::cout << "Exiting program. Goodbye!\n";
             std::cout << "\n";
             std::cout << "\n";
+            TaskFile.close();
             return 0;
         case 'A':
-            std::cout << "(release) (r-v0.2)\n";
+            std::cout << "(release) (r-v0.3)\n";
             std::cout << "\n";
             std::cout << "\n";
             std::cout << "Author(s): Eric Guerra\n";
