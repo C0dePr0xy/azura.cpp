@@ -10,7 +10,7 @@ int main() {
     while (true) {
         std::cout << "\n";
         std::cout << "\n";
-        std::cout << "Simple-Tasks for WINDOWS OS!\n";
+        std::cout << "Simple-Tasks\n";
         std::cout << "New Task [N]\n";
         std::cout << "Edit Task [E]\n";
         std::cout << "Delete Task [D]\n";
@@ -44,7 +44,7 @@ int main() {
                 return 1;
             }
             std::cout << "Enter Task Details: ";
-            std::cin.ignore(); // Ignore newline character from previous input
+            std::cin.ignore();
             std::getline(std::cin, taskstring);
             TaskFile << taskstring << "\n";
             TaskFile.close();
@@ -91,7 +91,7 @@ int main() {
             std::cout << "\n";
             return 0;
         case 'A':
-            std::cout << "(release) (r-v0.3)\n";
+            std::cout << "(release) (r-v0.4)\n";
             std::cout << "\n";
             std::cout << "\n";
             std::cout << "Author(s): Eric Guerra\n";
