@@ -29,6 +29,8 @@ int main() {
             TaskFile.open("Tasks.utsk", std::ios::app);
             if (!TaskFile.is_open()) {
                 std::cerr << "Error opening Tasks.utsk for writing!\n";
+                std::cout << "Operation failed: Error Code: PEFO01C!\n";
+                std::cout << "Refer to MANUAL.txt for more info\n";
                 return 1;
             }
             TaskFile.close();
@@ -37,6 +39,8 @@ int main() {
             TaskFile.open("Tasks.utsk", std::ios::out);
             if (!TaskFile.is_open()) {
                 std::cerr << "Error opening Tasks.utsk for writing!\n";
+                std::cout << "Operation failed: Error Code: PEFO01W!\n";
+                std::cout << "Refer to MANUAL.txt for more info\n";
                 return 1;
             }
             std::cout << "Enter Task Details: ";
@@ -53,7 +57,7 @@ int main() {
             if (confirmation == 'Y') {
                 if (std::remove("Tasks.utsk") == 0) {
                     std::cout << "\n";
-                    std::cout << "\nTasks File Deletion Complete!\n";
+                    std::cout << "Tasks File Deletion Complete!\n";
                     std::cout << "\n";
                 }
                 else {
@@ -72,13 +76,14 @@ int main() {
             else {
                 std::cout << "\n";
                 std::cout << "Invalid Input! Error Code: UEII02D!\n";
-                std::cout << "\n";
                 std::cout << "Refer to MANUAL.txt for more info\n";
                 std::cout << "\n";
             }
             break;
         case 'L':
-            std::cout << "\nFeature in progress.\n\n";
+            std::cout << "\n";
+            std::cout << "Feature in progress.\n";
+            std::cout << "\n";
             break;
         case 'X':
             std::cout << "\n";
