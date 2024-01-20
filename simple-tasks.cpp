@@ -9,6 +9,7 @@ int main() {
 
     while (true) {
         std::cout << "\n\n";
+        std::cout << "\n\n";
         std::cout << "Simple-Tasks\n";
         std::cout << "New Task [N]\n";
         std::cout << "Edit Task [E]\n";
@@ -24,10 +25,47 @@ int main() {
 
         std::cout << "\n\n";
 
+        std::string NewTaskName;
+        std::string EditTask;
+        std::string DeleteTask;
+
+        std::cout << "\n\n";
+
         std::ofstream TaskFile;
         std::string taskstring;
 
         switch (input) {
+            case 'N':
+                std::cout << "Name of Task: ";
+                std::cin >> NewTaskName;
+                NewTaskName += ".utsk";  // Append the extension here
+                TaskFile.open(NewTaskName, std::ios::app);
+                if (!TaskFile.is_open()) {
+                    std::cerr << "Error opening " << NewTaskName << " for writing!\n";
+                    std::cout << "Operation failed: Error Code: PEFO01C!\n";
+                    std::cout << "Refer to MANUAL.txt for more info\n";
+                    return 1;
+                }
+                TaskFile.close();
+                break;
+
+            case 'E':
+                std::cout << "Which file would you like to edit: ";
+                std::cin >> EditTask;
+                EditTask += ".utsk";  // Append the extension here
+                TaskFile.open(EditTask, std::ios::out);
+                if (!TaskFile.is_open()) {
+                    std::cerr << "Error opening " << EditTask << " for writing!\n";
+                    std::cout << "Operation failed: Error Code: PEFO01W!\n";
+                    std::cout << "Refer to MANUAL.txt for more info\n";
+                    return 1;
+                }
+                std::cout << "Enter Task Details: ";
+                std::cin.ignore();
+                std::getline(std::cin, taskstring);
+                TaskFile << taskstring << "\n";
+                TaskFile.close();
+                break;
             case 'N':
                 std::cout << "Name of Task: ";
                 std::cin >> NewTaskName;
