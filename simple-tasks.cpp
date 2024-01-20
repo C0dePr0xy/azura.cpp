@@ -19,17 +19,14 @@ int main() {
         std::cout << "Exit [X]\n";
         std::cin >> input;
 
+        std::cout << "\n";
+        std::cout << "\n";
+        std::cout << "\n";
+        std::cout << "\n";
+
         std::string NewTaskName;
         std::string EditTask;
         std::string DeleteTask;
-
-        std::cout << "\n\n";
-
-        std::string NewTaskName;
-        std::string EditTask;
-        std::string DeleteTask;
-
-        std::cout << "\n\n";
 
         std::ofstream TaskFile;
         std::string taskstring;
