@@ -38,7 +38,7 @@ int main() {
             case 'N':
                 std::cout << "Name of Task: ";
                 std::cin >> NewTaskName;
-                NewTaskName += ".utsk";  // Append the extension here
+                NewTaskName += ".utsk";
                 TaskFile.open(NewTaskName, std::ios::app);
                 if (!TaskFile.is_open()) {
                     std::cerr << "Error opening " << NewTaskName << " for writing!\n";
@@ -52,7 +52,7 @@ int main() {
             case 'E':
                 std::cout << "Which file would you like to edit: ";
                 std::cin >> EditTask;
-                EditTask += ".utsk";  // Append the extension here
+                EditTask += ".utsk";
                 TaskFile.open(EditTask, std::ios::out);
                 if (!TaskFile.is_open()) {
                     std::cerr << "Error opening " << EditTask << " for writing!\n";
@@ -66,42 +66,10 @@ int main() {
                 TaskFile << taskstring << "\n";
                 TaskFile.close();
                 break;
-            case 'N':
-                std::cout << "Name of Task: ";
-                std::cin >> NewTaskName;
-                NewTaskName += ".utsk";  // Append the extension here
-                TaskFile.open(NewTaskName, std::ios::app);
-                if (!TaskFile.is_open()) {
-                    std::cerr << "Error opening " << NewTaskName << " for writing!\n";
-                    std::cout << "Operation failed: Error Code: PEFO01C!\n";
-                    std::cout << "Refer to MANUAL.txt for more info\n";
-                    return 1;
-                }
-                TaskFile.close();
-                break;
-
-            case 'E':
-                std::cout << "Which file would you like to edit: ";
-                std::cin >> EditTask;
-                EditTask += ".utsk";  // Append the extension here
-                TaskFile.open(EditTask, std::ios::out);
-                if (!TaskFile.is_open()) {
-                    std::cerr << "Error opening " << EditTask << " for writing!\n";
-                    std::cout << "Operation failed: Error Code: PEFO01W!\n";
-                    std::cout << "Refer to MANUAL.txt for more info\n";
-                    return 1;
-                }
-                std::cout << "Enter Task Details: ";
-                std::cin.ignore();
-                std::getline(std::cin, taskstring);
-                TaskFile << taskstring << "\n";
-                TaskFile.close();
-                break;
-
             case 'D':
                 std::cout << "Which file would you like to delete: ";
                 std::cin >> DeleteTask;
-                DeleteTask += ".utsk";  // Append the extension here
+                DeleteTask += ".utsk";
                 std::cout << "Deletion of " << DeleteTask << " is irreversible!\n";
                 std::cout << "Proceed? [Y] [N]\n";
                 std::cin >> confirmation;
