@@ -8,8 +8,9 @@ int main() {
     char input;
 
     while (true) {
-        std::cout << "\n\n";
-        std::cout << "\n\n";
+        std::cout << "\n";
+        std::cout << "\n";
+
         std::cout << "Simple-Tasks\n";
         std::cout << "New Task [N]\n";
         std::cout << "Edit Task [E]\n";
