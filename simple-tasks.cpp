@@ -1,6 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <main-log.hpp>
 
 char confirmation;
 
@@ -8,6 +9,7 @@ int main() {
     char input;
 
     while (true) {
+        log();
         std::cout << "\n";
         std::cout << "\n";
 
@@ -108,6 +110,7 @@ int main() {
                 std::cout << "\n";
                 std::cout << "Exiting program. Goodbye!\n";
                 std::cout << "\n";
+                Logfile.close();
                 return 0;
 
             case 'A':
