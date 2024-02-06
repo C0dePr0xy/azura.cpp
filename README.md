@@ -24,7 +24,7 @@ Simple-Tasks is a Windows console app for managing tasks.
 4. **List Tasks (L):** (Coming soon)
 
 ## About
-- **Version:** Release (r-v0.1)
+- **Version:** Release (r-v0.4)
 - **Author:** Eric Guerra
 - **Contact:** [ericg36@outlook.com](mailto:ericg36@outlook.com)
 
