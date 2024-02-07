@@ -1,4 +1,4 @@
-#include "main-log.hpp"
+#include "functions.hpp"
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -9,12 +9,10 @@ char confirmation;
 int main() {
     char input;
 
-    while (true) {
-        log();
-        std::cout << "\n";
-        std::cout << "\n";
+    userlogin();
 
-        std::cout << "Simple-Tasks\n";
+    while (true) {
+        std::cout << "Simple-Tasks" << " [" << version() << "]\n";
         std::cout << "New Task [N]\n";
         std::cout << "Edit Task [E]\n";
         std::cout << "Delete Task [D]\n";
@@ -22,11 +20,9 @@ int main() {
         std::cout << "About [A]\n";
         std::cout << "Exit [X]\n";
         std::cin >> input;
+        std::cout << "\n";
+        std::cout << "\n";
 
-        std::cout << "\n";
-        std::cout << "\n";
-        std::cout << "\n";
-        std::cout << "\n";
 
         std::string NewTaskName;
         std::string EditTask;
@@ -114,7 +110,7 @@ int main() {
             return 0;
 
         case 'A':
-            std::cout << "(release) (r-v0.5)\n";
+            std::cout << "(release) (r-v"<< version() << ")\n";
             std::cout << "\n\n";
             std::cout << "Author(s): Eric Guerra\n";
             std::cout << "\n";
