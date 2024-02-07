@@ -11,7 +11,7 @@ std::string pword;
 
 double version() {
 	Version vNum;
-	vNum.version =+ 0.1;
+	vNum.version = vNum.version + 0.1;
 
 	return vNum.version;
 }
