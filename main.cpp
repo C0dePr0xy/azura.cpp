@@ -32,7 +32,7 @@ int main() {
         std::string taskstring;
 
         switch (input) {
-        case 'N':
+        case 'N || n':
             std::cout << "Name of Task: ";
             std::cin >> NewTaskName;
             NewTaskName += ".utsk";
@@ -46,7 +46,7 @@ int main() {
             TaskFile.close();
             break;
 
-        case 'E':
+        case 'E || e':
             std::cout << "Which file would you like to edit: ";
             std::cin >> EditTask;
             EditTask += ".utsk";
@@ -63,7 +63,7 @@ int main() {
             TaskFile << taskstring << "\n";
             TaskFile.close();
             break;
-        case 'D':
+        case 'D || d':
             std::cout << "Which file would you like to delete: ";
             std::cin >> DeleteTask;
             DeleteTask += ".utsk";
@@ -97,19 +97,19 @@ int main() {
             }
             break;
 
-        case 'L':
+        case 'L || l':
             std::cout << "\n";
             std::cout << "Feature in progress.\n";
             std::cout << "\n";
             break;
 
-        case 'X':
+        case 'X || x':
             std::cout << "\n";
             std::cout << "Exiting program. Goodbye!\n";
             std::cout << "\n";
             return 0;
 
-        case 'A':
+        case 'A || a':
             std::cout << "(release) (r-v"<< version() << ")\n";
             std::cout << "\n\n";
             std::cout << "Author(s): Eric Guerra\n";
