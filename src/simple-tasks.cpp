@@ -13,11 +13,7 @@
 
 int main()
 {
-    while (true)
-    {
-        checkUserFile();
-        mainMenu();
-        simpleTasksMenu();
-    }
-    return 0;
+    checkUserFile();
+    mainMenu();
+    simpleTasksMenu();
 }

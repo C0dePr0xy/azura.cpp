@@ -27,6 +27,9 @@ class taskManagerAgent
         void about()
         {
             double version = 0.1;
+
+            std::ifstream userFile(".user.dll");
+            std::getline(userFile, user.username);
             
             std::cout << "Simple Tasks v" << version << "\n\n";
             std::cout << "[User]:" << user.username << "\n";
