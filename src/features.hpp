@@ -1,3 +1,6 @@
+#ifndef FEATURES_HPP
+#define FEATURES_HPP
+
 // File: features.hpp
 // This file is used to store all the program functions or "features" for the sake of easy navigation, readability, and organization.
 // I really love functions, they make my life so much easier.
@@ -34,7 +37,6 @@ void checkUserFile() {
 // It allows the user to login, register, or exit the program, simple.
 void mainMenu()
 {
-    checkUserFile();
     runtimeAgent();
     std::cout << "Simple Tasks v0.1" << "\n\n";
     std::cout << "Please select an option from the menu below:" << "\n\n";
@@ -112,11 +114,23 @@ void simpleTasksMenu()
 {
     runtimeAgent();
     taskManagerAgent taskManager;
-    
-    std::cout << "Simple Tasks v0.1\n\n";
 
-    runtimeAgent();
-    taskManager.about();
+    std::cout << "[Simple Tasks Options]" << "\n\n";
+    std::cout << "[1] About" << "\n";
+    std::cin >> taskManager.menuOption;
+
+    switch (taskManager.menuOption)
+    {
+        case 1:
+            runtimeAgent();
+            taskManager.about();
+            break;
+        default:
+            runtimeAgent();
+            std::cout << "Invalid choice. Please try again." << "\n";
+            simpleTasksMenu();
+            break;
+    }
 }
 
 // Checks system OS and clear the terminal screen (Supports macOS, Linux, and Windows).
@@ -130,3 +144,5 @@ void runtimeAgent()
         system("clear");
     #endif
 }
+
+#endif // FEATURES_HPP

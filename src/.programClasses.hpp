@@ -6,6 +6,9 @@
 #include <fstream>
 #include <string>
 
+// Includes access to the program functions for use in the taskManagementAgent class.
+#include "features.hpp"
+
 // Manages the user agent.
 // This class is used to manage the user's login information.
 // It contains the user's username and password.
@@ -23,6 +26,7 @@ class taskManagerAgent
     public:
         userAgentManager user;
         std::string taskAgent;
+        int menuOption;
 
         void about()
         {
@@ -33,6 +37,17 @@ class taskManagerAgent
             
             std::cout << "Simple Tasks v" << version << "\n\n";
              //std::cout << "[User]:" << user.username << "\n"; --Will revisit later.
-            std::cout << "[Author]: Eric Guerra" << "\n";
+            std::cout << "[Author]: Eric Guerra" << "\n\n";
+            std::cout << "[1] Exit Program" << "\n";
+            std::cin >> menuOption;
+            switch (menuOption)
+            {
+                case 1:
+                    exit(0);
+                    break;
+                default:
+                    std::cout << "Invalid option. Please try again." << "\n";
+                    break;
+            }
         }
 };
