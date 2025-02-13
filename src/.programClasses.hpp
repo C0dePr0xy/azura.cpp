@@ -26,6 +26,7 @@ class taskManagerAgent
 
         void about()
         {
+            runtimeAgent();
             double version = 0.1;
 
             std::ifstream userFile(".user.dll");
