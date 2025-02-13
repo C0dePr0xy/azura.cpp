@@ -28,7 +28,7 @@ Simple Tasks is a terminal-based application that helps users manage their daily
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/simple-tasks.git
+    git clone https://github.com/C0dePr0xy/simple-tasks.git
     ```
 2. Navigate to the project directory:
     ```sh
