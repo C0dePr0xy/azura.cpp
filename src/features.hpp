@@ -10,7 +10,7 @@
 
 userAgentManager user;
 
-void loginSystem(), mainMenu(), registerSystem(), checkUserFile(), simpleTasksMenu(), uptimeSystem();
+void loginSystem(), mainMenu(), registerSystem(), checkUserFile(), simpleTasksMenu(), runtimeAgent();
 
 void checkUserFile() {
     std::ifstream userFile(".user.dll");
@@ -35,20 +35,22 @@ void mainMenu()
     switch (choice)
     {
         case 1:
+            runtimeAgent();
             loginSystem();
             break;
         case 2:
+            runtimeAgent();
             registerSystem();
             break;
         case 3:
-            std::cout << "Exiting program..." << std::endl;
+            exit(0);
             break;
         default:
-            std::cout << "Invalid choice. Please try again." << std::endl;
+            std::cout << "Invalid choice. Please try again." << "\n";
+            runtimeAgent();
             mainMenu();
             break;
     }
-    system("clear");
 }
 
 void loginSystem()
@@ -62,12 +64,16 @@ void loginSystem()
     std::cin >> password;
 
     std::ifstream userFile(".user.dll");
-    if (!user.username.compare(username) && !user.password.compare(password)) {
+    std::getline(userFile, user.username);
+    std::getline(userFile, user.password);
+    userFile.close();
+    if (username == user.username && password == user.password) {
         std::cout << "Login successful!" << "\n";
-        system("clear") || system("cls");
+        runtimeAgent();
+        simpleTasksMenu();
     } else {
         std::cout << "Invalid username or password. Please try again." << "\n";
-        system("clear") || system("cls");
+        runtimeAgent();
         loginSystem();
     }
 }
@@ -84,14 +90,26 @@ void registerSystem()
     userFile << "[USERNAME]:\n" << user.username << "\n";
     userFile << "[PASSWORD]:\n" << user.password << "\n";
     userFile.close();
+    simpleTasksMenu();
 }
 
 void simpleTasksMenu()
 {
+    runtimeAgent();
     taskManagerAgent taskManager;
     
     std::cout << "Simple Tasks v0.1\n\n";
     std::cout << "Wecome, " << user.username << "!" << "\n\n";
 
     taskManager.about();
+}
+
+// Checks system OS and clear the terminal screen.
+void runtimeAgent()
+{
+    if (_WIN32) {
+        system("cls");
+    } else {
+        system("clear");
+    }
 }
