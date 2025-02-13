@@ -13,7 +13,6 @@
 
 int main()
 {
-    checkUserFile();
     mainMenu();
     simpleTasksMenu();
 }

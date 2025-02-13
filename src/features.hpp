@@ -34,6 +34,7 @@ void checkUserFile() {
 // It allows the user to login, register, or exit the program, simple.
 void mainMenu()
 {
+    checkUserFile();
     runtimeAgent();
     std::cout << "Simple Tasks v0.1" << "\n\n";
     std::cout << "Please select an option from the menu below:" << "\n\n";
