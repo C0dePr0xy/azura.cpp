@@ -115,6 +115,7 @@ void simpleTasksMenu()
     
     std::cout << "Simple Tasks v0.1\n\n";
 
+    runtimeAgent();
     taskManager.about();
 }
 

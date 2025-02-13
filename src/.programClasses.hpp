@@ -26,14 +26,13 @@ class taskManagerAgent
 
         void about()
         {
-            runtimeAgent();
-            double version = 0.1;
+            double version = 0.1; // Program version. This should change before every release.
 
-            std::ifstream userFile(".user.dll");
-            std::getline(userFile, user.username);
+            /*std::ifstream userFile(".user.dll");
+            std::getline(userFile, user.username);*/ // --Will revisit later.
             
             std::cout << "Simple Tasks v" << version << "\n\n";
-            std::cout << "[User]:" << user.username << "\n";
+             //std::cout << "[User]:" << user.username << "\n"; --Will revisit later.
             std::cout << "[Author]: Eric Guerra" << "\n";
         }
 };
