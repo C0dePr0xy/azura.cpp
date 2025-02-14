@@ -5,8 +5,6 @@
 
 // Includes necessary libraries for the program to run.
 #include <iostream>
-#include <fstream>
-#include <string>
 
 // List of program functions or "features" for the sake of easy navigation, readability, and organization.
 #include "features.hpp"
