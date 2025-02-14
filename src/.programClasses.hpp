@@ -28,7 +28,7 @@ class taskManagerAgent
 
         int menuOption;
 
-        void about(), verifyTaskManager(), createTask(), generateTaskLibrary();
+        void generateTaskLibrary();
         
         void createTask()
         {
