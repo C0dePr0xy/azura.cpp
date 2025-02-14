@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <ctime>
 
 // Manages the user agent.
 // This class is used to manage the user's login information.
@@ -23,7 +24,22 @@ class taskManagerAgent
     public:
         userAgentManager user;
         std::string taskAgent;
+        std::string taskName;
+
         int menuOption;
+
+        void about(), verifyTaskManager(), createTask(), generateTaskLibrary();
+        
+        void createTask()
+        {
+            std::cout << "[Create a new task]" << "\n\n";
+            std::cout << "[Enter your task name]: ";
+            std::cin >> taskName;
+            std::ofstream taskFile("tasklib.dll");
+            taskFile << "[TASK NAME]: " << taskName << "\n";
+            taskFile.close();
+            std::cout << "Task created successfully!" << __TIMESTAMP__ << "\n"; // For debugging purposes.
+        }
 
         void about()
         {
@@ -45,6 +61,16 @@ class taskManagerAgent
                 default:
                     std::cout << "Invalid option. Please try again." << "\n";
                     break;
+            }
+        }
+
+        void verifyTaskManager()
+        {
+            std::ifstream taskFile("tasklib.dll");
+            if (!taskFile) {
+                std::ofstream taskFile("tasklib.dll");
+            } else {
+                taskFile.close();
             }
         }
 };
