@@ -6,9 +6,6 @@
 #include <fstream>
 #include <string>
 
-// Includes access to the program functions for use in the taskManagementAgent class.
-#include "features.hpp"
-
 // Manages the user agent.
 // This class is used to manage the user's login information.
 // It contains the user's username and password.

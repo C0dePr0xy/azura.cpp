@@ -1,6 +1,3 @@
-#ifndef FEATURES_HPP
-#define FEATURES_HPP
-
 // File: features.hpp
 // This file is used to store all the program functions or "features" for the sake of easy navigation, readability, and organization.
 // I really love functions, they make my life so much easier.
@@ -144,5 +141,3 @@ void runtimeAgent()
         system("clear");
     #endif
 }
-
-#endif // FEATURES_HPP
