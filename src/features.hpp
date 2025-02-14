@@ -111,9 +111,11 @@ void simpleTasksMenu()
 {
     runtimeAgent();
     taskManagerAgent taskManager;
+    taskManager.verifyTaskManager();
 
     std::cout << "[Simple Tasks Options]" << "\n\n";
     std::cout << "[1] About" << "\n";
+    std::cout << "[2] Create a new task" << "\n";
     std::cin >> taskManager.menuOption;
 
     switch (taskManager.menuOption)
@@ -121,6 +123,10 @@ void simpleTasksMenu()
         case 1:
             runtimeAgent();
             taskManager.about();
+            break;
+        case 2:
+            runtimeAgent();
+            taskManager.createTask();
             break;
         default:
             runtimeAgent();
