@@ -36,12 +36,12 @@ Simple Tasks is a terminal-based application that helps users manage their daily
     ```
 3. Compile the program:
     ```sh
-    g++ -o simple-tasks src/simple-tasks.cpp
+    g++ src/simple-tasks.cpp -o STcli
     ```
 
 ## Usage
 
 Run the compiled program:
 ```sh
-./simple-tasks
+./STcli
 ```
