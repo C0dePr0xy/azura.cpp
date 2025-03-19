@@ -4,11 +4,13 @@
 // Description: A simple program that allows the user to organize and manage their daily tasks in their terminal.
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
+// Variable to store the user's choice (This can be used anywhere in the program).
 int userChoice;
 
-// Function designed to check the OS while building the program. -- Windows, Linux, MacOS
-void checkSystemOS()
+// Function designed to clear the terminal screen (used when building the program, checks OS when building). -- Windows, Linux, MacOS
+void clear()
 {
     #ifdef _WIN32
         system("cls");
@@ -20,7 +22,6 @@ void checkSystemOS()
 // Function designed to display the main menu of Simple Tasks CLI.
 void mainMenu()
 {
-    checkSystemOS();
     std::cout << "Simple Tasks [CLI]\n";
     std::cout << "[1] Create a Task\n";
     std::cout << "[2] Delete a Task\n";
@@ -33,47 +34,47 @@ void mainMenu()
     switch (userChoice)
     {
         case (1):
-            checkSystemOS();
+            clear();
             std::cout << "Task Created Successfully!\n";
-            checkSystemOS();
+            clear();
             break;
         case (2):
-            checkSystemOS();
+            clear();
             std::cout << "Task Deleted Successfully!\n";
+            clear();
             break;
         case (3):
-            checkSystemOS();
+            clear();
             std::cout << "Task List\n";
-            checkSystemOS();
+            clear();
             break;
         case (4):
-            checkSystemOS();
-            std::cout << "Exiting Simple Tasks CLI...\n";
-            system("exit");
+            clear();
+            exit(0); // Closes the program. -- Windows, Linux, MacOS
             break;
         case (5):
-            checkSystemOS();            
-            std::cout << "Simple Tasks [CLI]\n";
-            std::cout << "Source Code: " << "https://github.com/C0dePr0xy/simple-tasks" << "\n";
-            std::cout << "Author: Eric Guerra\n";
-            std::cout << "Version: 0.1\n";
-            std::cout << "Description: A simple program that allows the user to organize and manage their daily tasks in their terminal interface.\n\n";
+            clear();            
+            std::cout << "Simple Tasks [CLI]\n\n";
+            std::cout << "[Source Code] " << "https://github.com/C0dePr0xy/simple-tasks" << "\n";
+            std::cout << "[Author] Eric Guerra\n";
+            std::cout << "[Build Date] " << __DATE__ << "\n";
+            std::cout << "[Description] A simple daily task managment application for the terminal.\n\n";
             std::cout << "[Press any key to return to the main menu.]\n";
             std::cin.ignore();
             std::cin.get();
-            checkSystemOS();
+            clear();
             break;
         default:
-            checkSystemOS();
+            clear();
             std::cout << "Invalid Choice!\n";
-            checkSystemOS();
+            clear();
             break;
     }
 }
 
 int main()
 {
-    checkSystemOS();
+    clear();
     while (true)
     {
         mainMenu();
