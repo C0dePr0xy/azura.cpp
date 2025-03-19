@@ -1,6 +1,6 @@
 # Simple Tasks
 
-A simple program that allows the user to organize and manage their daily tasks in their terminal.
+A simple program that allows the user to organize and manage their daily tasks in their terminal. The current version of this program is made as a terminal application, however I plan on creating a graphical edition at a later date.
 
 ## Author
 
