@@ -11,6 +11,9 @@
 // Variable to store the user's choice (This can be used anywhere in the program).
 int userChoice;
 
+// Variable to store a yes or no choice from the user (This is meant for confirmation prompts in important components of the program).
+char userConfirmation;
+
 // This class is designed to store task information. This class will be useful for maintaining this program and adding more features in the future. :)
 class task
 {
@@ -72,7 +75,34 @@ void mainMenu()
         case (2):
             clear();
             std::cout << "Simple Tasks [CLI]\n\n";
-            std::cout << "Task Deleted Successfully!\n";
+            std::cout << "Task Deletion...\n";
+            std::cout << "WARNING: Are you sure you want to enter task deletion mode? [Y/N]: ";
+            std::cin >> userConfirmation;
+            if (userConfirmation == 'Y' || userConfirmation == 'y')
+            {
+                std::cout << "Task Name: ";
+                std::cin >> Task.taskName;
+                for (int i = 0; i < taskList.size(); i++)
+                {
+                    if (Task.taskName == taskList[i].taskName)
+                    {
+                        taskList.erase(taskList.begin() + i);
+                        remove((Task.taskName + ".task").c_str());
+                        std::cout << "Task Deleted!\n";
+                        break;
+                    }
+                    else
+                    {
+                        std::cout << "Task Not Found!\n";
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                clear();
+                break;
+            }
             clear();
             break;
         case (3): // Displays the tasks in the task list vector to the terminal.
