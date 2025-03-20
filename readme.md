@@ -1,4 +1,4 @@
-# Simple Tasks
+# ![Simple-Tasks Logo](https://github.com/C0dePr0xy/azura.cpp/assets/87400651/e8bf7bfb-90d9-4e4b-82aa-21fb24dd3f10) Simple Tasks
 
 A simple program that allows the user to organize and manage their daily tasks in their terminal. The current version of this program is made as a terminal application, however I plan on creating a graphical edition at a later date.
 
