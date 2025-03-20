@@ -11,10 +11,10 @@
 // Variable to store the user's choice (This can be used anywhere in the program).
 int userChoice;
 
-// This class is designed to store task information.
+// This class is designed to store task information. This class will be useful for maintaining this program and adding more features in the future. :)
 class task
 {
-    public:
+    public: // The following variables below puplic will throw warnings, but the program will still compile and run as intended.
         std::string taskName = "Untitled";
         std::string taskDescription = "No Description";
         std::string taskDate = __DATE__;
@@ -81,7 +81,7 @@ void mainMenu()
             std::cout << "Task List...\n";
             for (int i = 0; i < taskList.size(); i++)
             {
-                std::cout << " ∙ " <<taskList[i].taskName << " [" << taskList[i].taskStatus << "]" << "\n";
+                std::cout << " ∙ " <<taskList[i].taskName << " [" << taskList[i].taskStatus << "]" << "\n"; // This will display the task name and status of each task in the list vector to the terminal. 
             }
             std::cout << "\n";
             std::cout << "[Press any key to return to the main menu.]\n";
