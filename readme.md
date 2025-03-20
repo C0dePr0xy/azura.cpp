@@ -2,6 +2,8 @@
 
 A simple program that allows the user to organize and manage their daily tasks in their terminal. The current version of this program is made as a terminal application, however I plan on creating a graphical edition at a later date.
 
+<img width="962" alt="image" src="https://github.com/user-attachments/assets/11fc18c6-0c0f-4a98-b086-595609574e62" />
+
 ## Author
 
 Eric Guerra
