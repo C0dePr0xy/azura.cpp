@@ -53,7 +53,7 @@ void mainMenu()
     std::ofstream taskFile; 
     switch (userChoice)
     {
-        case (1):
+        case (1): // Creates a task, stores relevant information in a file, and adds the task to a list vector.
             clear();
             std::cout << "Simple Tasks [CLI]\n\n";
             std::cout << "Task Name: ";
@@ -75,7 +75,7 @@ void mainMenu()
             std::cout << "Task Deleted Successfully!\n";
             clear();
             break;
-        case (3):
+        case (3): // Displays the tasks in the task list vector to the terminal.
             clear();
             std::cout << "Simple Tasks [CLI]\n\n";
             std::cout << "Task List...\n";
@@ -93,7 +93,7 @@ void mainMenu()
             clear();
             exit(0); // Closes the program. -- Windows, Linux, MacOS
             break;
-        case (5):
+        case (5): // Displays info about the program and the author and/ or maintainer(s).
             clear();            
             std::cout << "Simple Tasks [CLI]\n\n";
             std::cout << "[Source Code] " << "https://github.com/C0dePr0xy/simple-tasks" << "\n";
