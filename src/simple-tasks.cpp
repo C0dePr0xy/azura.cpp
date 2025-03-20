@@ -5,9 +5,28 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <fstream>
+#include <vector>
 
 // Variable to store the user's choice (This can be used anywhere in the program).
 int userChoice;
+
+// This class is designed to store task information.
+class task
+{
+    public:
+        std::string taskName = "Untitled";
+        std::string taskDescription = "No Description";
+        std::string taskDate = __DATE__;
+        std::string taskTime = __TIME__;
+        std::string taskStatus = "Incomplete";
+};
+
+// Creates an object for use in the program from the task class.
+task Task;
+
+// This vector is designed to store task objects for listing in the task list.
+std::vector<task> taskList;
 
 // Function designed to clear the terminal screen (used when building the program, checks OS when building). -- Windows, Linux, MacOS
 void clear()
@@ -31,21 +50,43 @@ void mainMenu()
     std::cout << "Choice: ";
     std::cin >> userChoice;
 
+    std::ofstream taskFile; 
     switch (userChoice)
     {
         case (1):
             clear();
-            std::cout << "Task Created Successfully!\n";
+            std::cout << "Simple Tasks [CLI]\n\n";
+            std::cout << "Task Name: ";
+            std::cin >> Task.taskName;
+            std::cout << "Task Description: ";
+            std::cin >> Task.taskDescription;
+            taskFile.open(Task.taskName + ".task");
+            taskFile << "[Name] " << Task.taskName << "\n";
+            taskFile << "[Description] " << Task.taskDescription << "\n\n";
+            taskFile << "[Date Created] " << Task.taskDate << " @" << Task.taskTime << "\n";
+            taskFile << "[Status] " << Task.taskStatus << "\n";
+            taskFile.close();
+            taskList.push_back(Task);
             clear();
             break;
         case (2):
             clear();
+            std::cout << "Simple Tasks [CLI]\n\n";
             std::cout << "Task Deleted Successfully!\n";
             clear();
             break;
         case (3):
             clear();
-            std::cout << "Task List\n";
+            std::cout << "Simple Tasks [CLI]\n\n";
+            std::cout << "Task List...\n";
+            for (int i = 0; i < taskList.size(); i++)
+            {
+                std::cout << " ∙ " <<taskList[i].taskName << " [" << taskList[i].taskStatus << "]" << "\n";
+            }
+            std::cout << "\n";
+            std::cout << "[Press any key to return to the main menu.]\n";
+            std::cin.ignore();
+            std::cin.get();
             clear();
             break;
         case (4):
@@ -57,7 +98,7 @@ void mainMenu()
             std::cout << "Simple Tasks [CLI]\n\n";
             std::cout << "[Source Code] " << "https://github.com/C0dePr0xy/simple-tasks" << "\n";
             std::cout << "[Author] Eric Guerra\n";
-            std::cout << "[Build Date] " << __DATE__ << "\n";
+            std::cout << "[Build Date] " << __DATE__ << " " << __TIME__ << "\n";
             std::cout << "[Description] A simple daily task managment application for the terminal.\n\n";
             std::cout << "[Press any key to return to the main menu.]\n";
             std::cin.ignore();
