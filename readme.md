@@ -4,29 +4,35 @@ A simple program that allows the user to organize and manage their daily tasks i
 
 <img width="962" alt="image" src="https://github.com/user-attachments/assets/11fc18c6-0c0f-4a98-b086-595609574e62" />
 
-## Author
+## Author ✍️
 
 Eric Guerra
 
-## Version
+## Download Prebuilt Packages 📦
 
-0.1
+https://github.com/C0dePr0xy/simple-tasks/releases
 
-## Creation Date
+## Creation Date 🎉
 
 February 12, 2025
 
-## Description
+## Description 📝
 
-Simple Tasks is a terminal-based application that helps users manage their daily tasks. It includes features such as user login, registration, and task management. I am in the process of completely remaking Simple Tasks!
+Simple Tasks is an application that helps users manage their daily tasks. Simple Tasks (Previously "Project Azura") was my first ever C++ application, as such, the original code was difficult to maintain. I am now in the process of completely rewriting Simple Tasks into a mostly usable low-resource program!
 
-## Features
+## Features 🦾
 
-- User login and registration
-- Task management
+- Ability to safely exit the program in the terminal.
+- An about screen that shows relevant information about the program, and it's maintainer(s).
 - Clear terminal screen based on the operating system (macOS, Linux, and Windows are currently supported)
 
-## Installation
+## Under Construction 🚧
+
+- Ability to create a task which is saved to a file.
+- Ability to delete a task which is removed from the program directory.
+- Ability to display a list of completed, pending, and in-progress tasks.
+
+## Installation 🛠️
 
 1. Clone the repository:
     ```sh
@@ -41,7 +47,7 @@ Simple Tasks is a terminal-based application that helps users manage their daily
     g++ src/simple-tasks.cpp -o STcli
     ```
 
-## Usage
+## Usage 👀
 
 Run the compiled program:
 ```sh
