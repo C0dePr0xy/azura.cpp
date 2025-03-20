@@ -22,15 +22,18 @@ Simple Tasks is an application that helps users manage their daily tasks. Simple
 
 ## Features 🦾
 
-- Ability to safely exit the program in the terminal.
-- An about screen that shows relevant information about the program, and it's maintainer(s).
-- Clear terminal screen based on the operating system (macOS, Linux, and Windows are currently supported)
-
-## Under Construction 🚧
-
 - Ability to create a task which is saved to a file.
 - Ability to delete a task which is removed from the program directory.
 - Ability to display a list of completed, pending, and in-progress tasks.
+- Ability to safely exit the program in the terminal.
+- An about screen that shows relevant information about the program, and it's maintainer(s).
+- Clear terminal screen based on the operating system (macOS, Linux, and Windows are currently supported).
+
+## Under Construction 🚧
+
+- Intermediate bugfixing, fixing warnings, polishing (You might notice warnings when compiling the program, however the program should compile and run as intended).
+- Prepare documentation (manual, wiki, licence, etc) for a prebuilt release!
+- Ability to change task status within Simple Tasks [CLI] program.
 
 ## Installation 🛠️
 
