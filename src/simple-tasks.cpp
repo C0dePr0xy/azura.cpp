@@ -96,7 +96,7 @@ void mainMenu()
             taskList.push_back(Task);
             clear();
             break;
-        case (2):
+        case (2): // Deletes a task from the task list and deletes the task file from the program directory.
             clear();
             std::cout << "Simple Tasks [CLI]\n\n";
             std::cout << "Task Deletion...\n";
