@@ -21,7 +21,7 @@ class task
     public: // The following variables below puplic will throw warnings, but the program will still compile and run as intended.
         std::string taskName = "Untitled";
         std::string taskDescription = "No Description";
-        std::string taskDate = __DATE__
+        std::string taskDate = __DATE__;
         std::string taskTime = __TIME__;
         std::string taskStatus = "Incomplete";
 };
