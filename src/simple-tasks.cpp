@@ -41,6 +41,25 @@ void clear()
     #endif
 }
 
+// Checks is task files exist in the program drirectory and accounts for them in the task list.
+void taskScanner()
+{
+    std::ifstream taskFile;
+    taskFile.open(Task.taskName + ".task");
+    if (taskFile.is_open())
+    {
+        while (!taskFile.eof())
+        {
+            taskFile >> Task.taskName;
+            taskFile >> Task.taskDescription;
+            taskFile >> Task.taskDate;
+            taskFile >> Task.taskTime;
+            taskFile >> Task.taskStatus;
+        }
+    }
+    taskFile.close();
+}
+
 // Function designed to display the main menu of Simple Tasks CLI.
 void mainMenu()
 {
@@ -80,7 +99,7 @@ void mainMenu()
             std::cin >> userConfirmation;
             if (userConfirmation == 'Y' || userConfirmation == 'y')
             {
-                std::cout << "Task Name: ";
+                std::cout << "\nTask Name: ";
                 std::cin >> Task.taskName;
                 for (int i = 0; i < taskList.size(); i++)
                 {
@@ -108,7 +127,6 @@ void mainMenu()
         case (3): // Displays the tasks in the task list vector to the terminal.
             clear();
             std::cout << "Simple Tasks [CLI]\n\n";
-            std::cout << "Task List...\n";
             for (int i = 0; i < taskList.size(); i++)
             {
                 std::cout << " ∙ " <<taskList[i].taskName << " [" << taskList[i].taskStatus << "]" << "\n"; // This will display the task name and status of each task in the list vector to the terminal. 
@@ -146,6 +164,7 @@ void mainMenu()
 int main()
 {
     clear();
+    taskScanner();
     while (true)
     {
         mainMenu();
