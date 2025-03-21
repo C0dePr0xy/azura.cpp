@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <vector>
+#include <ctime>
 
 // Variable to store the user's choice (This can be used anywhere in the program).
 int userChoice;
@@ -20,8 +21,8 @@ class task
     public: // The following variables below puplic will throw warnings, but the program will still compile and run as intended.
         std::string taskName = "Untitled";
         std::string taskDescription = "No Description";
-        std::string taskDate = __DATE__;
-        std::string taskTime = __TIME__;
+        std::string taskDate = auto taskDate = __DATE__;
+        std::string taskTime = auto taskTime = __TIME__;
         std::string taskStatus = "Incomplete";
 };
 
@@ -80,7 +81,11 @@ void mainMenu()
             std::cout << "Simple Tasks [CLI]\n\n";
             std::cout << "Task Name: ";
             std::cin >> Task.taskName;
+            std::cin.ignore();
+            std::getline(std::cin, Task.taskName);
             std::cout << "Task Description: ";
+            std::cin.ignore();
+            std::getline(std::cin, Task.taskDescription);
             std::cin >> Task.taskDescription;
             taskFile.open(Task.taskName + ".task");
             taskFile << "[Name] " << Task.taskName << "\n";
