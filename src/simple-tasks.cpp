@@ -7,7 +7,6 @@
 #include <cstdlib>
 #include <fstream>
 #include <vector>
-#include <ctime>
 
 // Variable to store the user's choice (This can be used anywhere in the program).
 int userChoice;
