@@ -7,6 +7,9 @@
 #include <cstdlib>
 #include <fstream>
 #include <vector>
+#include <ctime>
+#include <iomanip>
+#include <sstream>
 
 // Variable to store the user's choice (This can be used anywhere in the program).
 int userChoice;
@@ -20,9 +23,25 @@ class task
     public: // The following variables below puplic will throw warnings, but the program will still compile and run as intended.
         std::string taskName = "Untitled";
         std::string taskDescription = "No Description";
-        std::string taskDate = __DATE__;
-        std::string taskTime = __TIME__;
+        std::string taskDate = "No Date";
+        std::string taskTime = "No Time";
         std::string taskStatus = "Incomplete";
+
+        void setupDateTime()
+        {
+            std::time_t now = std::time(nullptr);
+            std::tm *localTime = std::localtime(&now);
+
+            // Format the date
+            std::ostringstream dateStream;
+            dateStream << std::put_time(localTime, "%m-%d-%Y");
+            taskDate = dateStream.str();
+
+            // Format the time
+            std::ostringstream timeStream;
+            timeStream << std::put_time(localTime, "%H:%M");
+            taskTime = timeStream.str();
+        }
 };
 
 // Creates an object for use in the program from the task class.
@@ -85,6 +104,7 @@ void mainMenu()
             std::cout << "Task Description: ";
             std::cin.ignore();
             std::getline(std::cin, Task.taskDescription);
+            Task.setupDateTime();
             std::cin >> Task.taskDescription;
             taskFile.open(Task.taskName + ".task");
             taskFile << "[Name] " << Task.taskName << "\n";
