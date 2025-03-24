@@ -32,7 +32,7 @@ Simple Tasks is an application that helps users manage their daily tasks. Simple
 ## Under Construction 🚧
 
 - Intermediate bugfixing, fixing warnings, polishing (You might notice warnings when compiling the program, however the program should compile and run as intended).
-- Prepare documentation (manual, wiki, licence, etc) for a prebuilt release!
+- Prepare documentation (manual, wiki, licence, etc) for a prebuilt release.
 - Ability to change task status within Simple Tasks [CLI] program.
 
 ## Installation 🛠️
