@@ -25,7 +25,7 @@ class task
         std::string taskDate = "No Date";
         std::string taskTime = "No Time";
         std::string taskStatus = "Incomplete";
-        std::string taskFileSize = std::getsize(taskName + ".task");
+        std::string taskFileSize = "0";
 };
 
 // Creates an object for use in the program from the task class.
@@ -58,7 +58,6 @@ void taskScanner()
             taskFile >> Task.taskDate;
             taskFile >> Task.taskTime;
             taskFile >> Task.taskStatus;
-            taskFile >> Task.taskFileSize;
         }
     }
     taskFile.close();
@@ -92,7 +91,6 @@ void mainMenu()
             taskFile << "[Name] " << Task.taskName << "\n";
             taskFile << "[Description] " << Task.taskDescription << "\n\n";
             taskFile << "[Date Created] " << Task.taskDate << " @" << Task.taskTime << "\n";
-            taskFile << "[Size] " << Task.taskFileSize << " bytes\n";
             taskFile << "[Status] " << Task.taskStatus << "\n";
             taskFile.close();
             taskList.push_back(Task);

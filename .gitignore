@@ -2,3 +2,6 @@
 .DS_Store
 src/STcli
 STcli
+build.cpp
+build
+STcli-setup.cpp
