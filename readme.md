@@ -37,8 +37,9 @@ Simple Tasks is an application that helps users manage their daily tasks. Simple
 
 ## Installation 🛠️
 
-## (Optional) Automatic Setup --macOS (Tested on M1 MacBook Air) 🤖
+## (Optional) Automatic Setup 🤖
 
+--macOS (Tested on M1 MacBook Air)
 https://github.com/C0dePr0xy/simple-tasks/releases/download/Installer/STcli-Setup.command
 
 ## Manual Setup 👷🏻‍♂️
