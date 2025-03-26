@@ -39,7 +39,7 @@ Simple Tasks is an application that helps users manage their daily tasks. Simple
 
 ## (Optional) Automatic Setup 🤖
 
-https://github.com/C0dePr0xy/simple-tasks/releases/download/Installer/STcli-Setup
+https://github.com/C0dePr0xy/simple-tasks/releases/download/Installer/STcli-Setup.o
 
 ## Manual Setup 👷🏻‍♂️
 
