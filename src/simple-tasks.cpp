@@ -85,7 +85,6 @@ void mainMenu()
             std::cout << "Task Description: ";
             std::cin.ignore();
             std::getline(std::cin, Task.taskDescription);
-            std::cin >> Task.taskDescription;
             taskFile.open(Task.taskName + ".task");
             taskFile << "[Name] " << Task.taskName << "\n";
             taskFile << "[Description] " << Task.taskDescription << "\n\n";
