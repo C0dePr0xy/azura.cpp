@@ -3,5 +3,5 @@
 src/STcli
 STcli
 build.cpp
-build
 STcli-setup.cpp
+STcli-Setup
