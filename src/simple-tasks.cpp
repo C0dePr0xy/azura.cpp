@@ -8,6 +8,7 @@
 #include <fstream>
 #include <vector>
 #include <filesystem>
+#include <ctime>
 
 // Variable to store the user's choice (This can be used anywhere in the program).
 int userChoice;
@@ -24,7 +25,7 @@ class task
         std::string taskDate = "No Date";
         std::string taskTime = "No Time";
         std::string taskStatus = "Incomplete";
-        std::string taskFileSize = 0;
+        std::string taskFileSize = std::getsize(taskName + ".task");
 };
 
 // Creates an object for use in the program from the task class.
