@@ -5,3 +5,4 @@ STcli
 build.cpp
 STcli-setup.cpp
 STcli-Setup
+STcli-Setup.o
