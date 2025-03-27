@@ -20,8 +20,8 @@ char userConfirmation;
 class task
 {
     public: // The following variables below puplic will throw warnings, but the program will still compile and run as intended.
-        char taskName[256] = "Untitled";
-        char taskDescription[512] = "No Description";
+        std::string taskName[256] = "Untitled";
+        std::string taskDescription[512] = "No Description";
         std::string taskDate = "No Date";
         std::string taskTime = "No Time";
         std::string taskStatus = "Incomplete";
