@@ -20,8 +20,8 @@ char userConfirmation;
 class task
 {
     public: // The following variables below puplic will throw warnings, but the program will still compile and run as intended.
-        std::string taskName[256] = "Untitled";
-        std::string taskDescription[512] = "No Description";
+        std::string taskName = "Untitled";
+        std::string taskDescription = "No Description";
         std::string taskDate = "No Date";
         std::string taskTime = "No Time";
         std::string taskStatus = "Incomplete";
@@ -48,7 +48,7 @@ void clear()
 void taskScanner()
 {
     std::ifstream taskFile;
-    taskFile.open(Task.taskName[256] + ".task");
+    taskFile.open(Task.taskName + ".task");
     if (taskFile.is_open())
     {
         while (!taskFile.eof())
@@ -83,10 +83,10 @@ void mainMenu()
             std::cout << "Simple Tasks [CLI]\n\n";
             std::cout << "Task Name: ";
             std::cin >> Task.taskName;
-            std::cin.getline(Task.taskName, 256);
+            std::cin.getline(Task.taskName);
             std::cout << "Task Description: ";
-            std::cin.getline(Task.taskDescription, 512);
-            taskFile.open(Task.taskName[256] + ".task");
+            std::cin.getline(Task.taskDescription);
+            taskFile.open(Task.taskName + ".task");
             taskFile << "[Name] " << Task.taskName << "\n";
             taskFile << "[Description] " << Task.taskDescription << "\n\n";
             taskFile << "[Date Created] " << Task.taskDate << " @" << Task.taskTime << "\n";
@@ -110,7 +110,7 @@ void mainMenu()
                     if (Task.taskName == taskList[i].taskName)
                     {
                         taskList.erase(taskList.begin() + i);
-                        remove((Task.taskName[256] + ".task").c_str());
+                        remove((Task.taskName + ".task").c_str());
                         std::cout << "Task Deleted!\n";
                         break;
                     }
