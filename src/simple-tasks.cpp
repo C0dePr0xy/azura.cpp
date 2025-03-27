@@ -20,8 +20,8 @@ char userConfirmation;
 class task
 {
     public: // The following variables below puplic will throw warnings, but the program will still compile and run as intended.
-        std::string taskName = "Untitled";
-        std::string taskDescription = "No Description";
+        std::string taskName[256] = "Untitled";
+        std::string taskDescription[512] = "No Description";
         std::string taskDate = "No Date";
         std::string taskTime = "No Time";
         std::string taskStatus = "Incomplete";
@@ -83,10 +83,9 @@ void mainMenu()
             std::cout << "Simple Tasks [CLI]\n\n";
             std::cout << "Task Name: ";
             std::cin >> Task.taskName;
-            std::getline(std::cin, Task.taskName);
+            std::cin.getline(Task.taskName, 256);
             std::cout << "Task Description: ";
-            std::cin.ignore();
-            std::getline(std::cin, Task.taskDescription);
+            std::cin.getline(Task.taskDescription, 512);
             taskFile.open(Task.taskName + ".task");
             taskFile << "[Name] " << Task.taskName << "\n";
             taskFile << "[Description] " << Task.taskDescription << "\n\n";
