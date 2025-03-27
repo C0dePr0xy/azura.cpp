@@ -8,3 +8,5 @@ STcli-Setup
 STcli-Setup.o
 STcli-Setup.command
 STcli.csh
+STcli-Setup.csh
+build.o
