@@ -83,9 +83,11 @@ void mainMenu()
             std::cout << "Simple Tasks [CLI]\n\n";
             std::cout << "Task Name: ";
             std::cin >> Task.taskName;
+            std::cin.ignore();
             std::getline(Task.taskName);
             std::cout << "Task Description: ";
             std::cin >> Task.taskDescription;
+            std::cin.ignore();
             std::getline(Task.taskDescription);
             taskFile.open(Task.taskName + ".task");
             taskFile << "[Name] " << Task.taskName << "\n";
