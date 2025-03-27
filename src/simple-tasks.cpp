@@ -48,7 +48,7 @@ void clear()
 void taskScanner()
 {
     std::ifstream taskFile;
-    taskFile.open(Task.taskName + ".task");
+    taskFile.open(Task.taskName[256] + ".task");
     if (taskFile.is_open())
     {
         while (!taskFile.eof())
@@ -86,7 +86,7 @@ void mainMenu()
             std::cin.getline(Task.taskName, 256);
             std::cout << "Task Description: ";
             std::cin.getline(Task.taskDescription, 512);
-            taskFile.open(Task.taskName + ".task");
+            taskFile.open(Task.taskName[256] + ".task");
             taskFile << "[Name] " << Task.taskName << "\n";
             taskFile << "[Description] " << Task.taskDescription << "\n\n";
             taskFile << "[Date Created] " << Task.taskDate << " @" << Task.taskTime << "\n";
@@ -110,7 +110,7 @@ void mainMenu()
                     if (Task.taskName == taskList[i].taskName)
                     {
                         taskList.erase(taskList.begin() + i);
-                        remove((Task.taskName + ".task").c_str());
+                        remove((Task.taskName[256] + ".task").c_str());
                         std::cout << "Task Deleted!\n";
                         break;
                     }
