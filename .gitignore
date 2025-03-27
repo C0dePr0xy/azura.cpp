@@ -7,3 +7,4 @@ STcli-setup.cpp
 STcli-Setup
 STcli-Setup.o
 STcli-Setup.command
+STcli.csh
